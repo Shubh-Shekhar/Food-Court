@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <div class="sideNav-pad">
+        <a mat-list-item  [routerLink]="['/nav',{
+          outlets:{
+            restaurant:['admin']
+          }
+        }]">
+          <mat-icon class="side-nav-icons">home</mat-icon>Home
+        </a>
+        <a mat-list-item [routerLink]="['/nav',{
+          outlets:{
+            restaurant:['resDetails']
+          }
+        }]">
+          <mat-icon class="side-nav-icons" >explore</mat-icon>Restaurant Details
+        </a>
+       
+      
+
+      </div>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <div class="head">
+    <div class="head-flex">
+
+      <mat-toolbar  color="primary">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      </mat-toolbar>
+     
+      <mat-toolbar style="justify-content: center;" color="primary">
+         <span>Admin Profile</span>
+      </mat-toolbar>
+      <mat-toolbar style="justify-content: right;" color="primary">
+        <button mat-icon-button (click)="signout()">
+          <mat-icon>logout</mat-icon>
+        </button>
+     </mat-toolbar>
+      
+     
+      
+    </div>
+  </div>
+    <!-- <app-admin></app-admin> -->
+    
+    <div class="router">
+       <router-outlet name="restaurant"></router-outlet>
+    </div>
+   
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

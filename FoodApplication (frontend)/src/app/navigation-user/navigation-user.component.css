@@ -1,0 +1,110 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 270px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+/* .mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+} */
+
+.head-flex {         
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.list-para {
+  margin-left: 15px;
+  margin-top: 30px;
+  font-size: larger;
+}
+
+.sideNav-pad {
+  padding: 10px;
+}
+
+.hr-class {
+  height: 1 px;
+  border-color: rgb(122, 118, 118);
+}
+
+.side-nav-icons {
+  margin-right: 25px;
+}
+
+.mat-form-field {
+  font-size: smaller;
+} 
+
+.active{
+  cursor: pointer;
+}
+
+.logo-image{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  
+}
+.mz{
+  margin-left: 4px;
+}
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color:white;
+ 
+  z-index:1000; 
+}
+.foot {
+ 
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color:white;
+  /* background-color: #5c32da; */
+  z-index:1000; 
+}
+.router{
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+.mar{
+ margin-top: 30px
+}
+
+@media screen and (max-width: 600px) {
+  .head-flex {         
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+  }
+  .router{
+    margin-top: 200px;
+  }
+  .head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 200px;
+    background-color:white;
+   
+    z-index:1000; */
+  }
+}

@@ -1,0 +1,39 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<body>
+<div class="container" >
+    <div class="myform container">
+      
+      <br><br>
+    <table class="table table-striped text-center">
+      <thead class="table-dark">
+        <tr >
+          <th class="text-center">Restaurant Name</th> 
+          <th class="text-center">Ratings</th> 
+          <th class="text-center">Email Id</th>
+          <th class="text-center">Add Dishes</th>
+          <th class="text-center">Get Dishes</th>
+          <th class="text-center">Delete</th>
+          
+          
+      </tr>
+  </thead>
+  <tbody>
+          <tbody>
+              <tr *ngFor="let user of message">
+                  <td>{{user.resturantName}}</td>
+                  <td>{{user.rating}}</td>
+                  <td>{{user.emailid}}</td>
+                 <td class="text-center"><button class="btn btn-success" (click)="addDishes(user.emailid,user.resturantName)">Add</button></td> 
+                 <td class="text-center"><button class="btn btn-primary" (click)="getDishes(user.emailid)">Get</button></td> 
+                 <td class="text-center"><button class="btn btn-danger" (click)="delete(user.emailid)">Delete</button></td>
+                  
+                </tr>
+          </tbody>
+          </table>
+          </div>
+  </div>
+ </body>

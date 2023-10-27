@@ -1,0 +1,135 @@
+<!-- Add Content Here -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<mat-sidenav-container class="sidenav-container" >
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'">
+    <mat-toolbar class="position-fixed">Menu</mat-toolbar>
+    <mat-nav-list class="mar">
+      <div class="sideNav-pad">
+        <a mat-list-item [routerLink]="['/profile',{
+          outlets:{
+            restdata:['dashboard']
+          }
+        }]">
+          <mat-icon class="side-nav-icons">home</mat-icon>Home
+        </a>
+        <a mat-list-item (click)="cart()">
+          <mat-icon class="side-nav-icons">add_shopping_cart</mat-icon> Cart 
+          <span class='badge badge-warning mz' id='lblCartCount'> {{cartlength}} </span>
+        </a>
+        <a mat-list-item (click)="favourite()">
+          <mat-icon class="side-nav-icons">favorite_border</mat-icon> Favorites
+          <span class='badge badge-warning mz' id='lblCartCount'> {{favlength}} </span>
+        </a>
+        <a mat-list-item (click)="orderhistory()">
+          <mat-icon class="side-nav-icons">description</mat-icon> Order history
+        </a>
+        <!-- <a mat-list-item href="#">
+          <mat-icon class="side-nav-icons">history</mat-icon> History
+        </a> -->
+        
+        <!-- <a mat-list-item routerLink="/upload">Upload</a>
+        <a mat-list-item routerLink="/live">LiveStream</a> -->
+        <hr class="hr-class">
+        <p class="list-para">
+        
+      </div>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content >
+    
+    <div class="head">
+    <div class="head-flex" >
+
+      <mat-toolbar color="primary">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span class="active" [routerLink]="['/profile',{
+          outlets:{
+            restdata:['dashboard']
+          }
+        }]">Foodie App</span>
+        <!-- <span>search bar and setting icons</span> -->
+      </mat-toolbar>
+      
+
+      <mat-toolbar style="justify-content: center;" color="primary">
+        <mat-form-field style="width: 40%;">
+          <input matInput placeholder="Search" [(ngModel)]="searchInput" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <mat-form-field [formGroup]="searchForm">
+          <mat-label>Select an option</mat-label>
+          <mat-select formControlName="search">
+           
+            <mat-option *ngFor="let prf of option" [value]="prf">{{prf}}</mat-option>
+           
+          </mat-select>
+        </mat-form-field>
+        
+        <button mat-icon-button (click)="search()">
+          <mat-icon matTooltip="Search">search</mat-icon>
+        </button>
+        
+      </mat-toolbar>
+
+      <mat-toolbar style="justify-content:right;" color="primary">
+        <span style="margin-right: 10px;font-family:'Times New Roman', Times, serif;padding-top: 5px;">Welcome {{tempname}}</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <div class="logo-image">
+            <img [src]="path" class="img-fluid">
+          </div>
+          
+        </button>
+      
+
+        <!-- <button mat-icon-button>
+          <mat-icon matTooltip="Log Out">login</mat-icon>
+          
+        </button> -->
+       
+        <mat-menu #menu="matMenu">
+          <!-- dropdwon -->
+          <button mat-menu-item (click)="signout()">
+            <mat-icon>login</mat-icon>
+            <span>SignOut</span>
+          </button>
+          <!-- <button mat-menu-item>
+            <mat-icon>help</mat-icon>
+            <span>Help</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>feedback</mat-icon>
+            <span>Send feedback</span>
+          </button> -->
+        </mat-menu>
+      </mat-toolbar>
+
+    </div>
+    </div>
+ <div class="router">
+  <router-outlet name="restdata"></router-outlet>
+</div>
+<div class="foot">
+  <footer class="bg-light text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © Email Id: foodapplicationtest1918@gmail.com
+     <i class="fa fa-facebook-square"style="font-size:20px;margin-left:5px" aria-hidden="true"></i>
+    <i class="fa fa-twitter-square" style="font-size:20px;margin-left:5px"aria-hidden="true"></i>
+    <i class="fa fa-youtube-square"style="font-size:20px;margin-left:5px" aria-hidden="true"></i>
+    <i class="fa fa-github-square" style="font-size:20px;margin-left:5px" aria-hidden="true"></i>
+  </div>
+  </footer>
+</div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

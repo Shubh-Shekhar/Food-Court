@@ -1,0 +1,46 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<body>
+<div class="container ">
+    <img src="assets/pizza1.jpg" alt="Norway" style="width:100%;">
+    <!-- <div class="text-block">
+      <button class="btn btn-primary" >SignOut</button><br><br>
+      <h1>Admin</h1>
+      <p>Welcome</p>
+    </div> -->
+<div class="container">
+<section class="get-in-touch">
+   <h1 class="title">Add Dishes</h1>
+   <form class="contact-form row" [formGroup]="restaurantform" >
+      <div class="form-field col-lg-6">
+         <input id="dishName" class="input-text js-input" type="text" formControlName="dishName" required>
+         <label class="label" for="name">Dish Name</label>
+      </div>
+      <!-- <div class="form-field col-lg-6 ">
+         <input id="quantity" class="input-text js-input" type="text" formControlName="quantity"   required>
+         <label class="label" for="address">Quantity</label>
+      </div> -->
+      <div class="form-field col-lg-6 ">
+         <input id="price" class="input-text js-input" type="text" formControlName="price" required>
+         <label class="label" for="zipcode">price</label>
+      </div>
+       <div class="form-field col-lg-6 ">
+         <input id="description" class="input-text js-input" type="text" formControlName="description" required>
+         <label class="label" for="phone">description</label>
+      </div>
+      <div class="form-field col-lg-6">
+         <input id="message" class="input-text js-input" type="file" (change)="onFileChanged($event)" required>
+         <label class="label" for="message">Add Dish Image</label>
+      </div>
+      <div class="form-field col-lg-12">
+         <input class="submit-btn" type="submit" value="Submit" (click)="submit()">
+         <!-- <input class="submit-btn zzzz" type="submit" value="Get" > -->
+      </div>
+      
+   </form>
+</section></div></div>
+
+

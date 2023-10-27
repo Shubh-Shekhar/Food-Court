@@ -1,0 +1,55 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+   <body>
+   <div class="container" >
+       <div class="shop-default shop-cards shop-tech">
+           <div class="row" >
+               <div class="col-md-4" *ngFor="let v of data">
+                   <div class="block product no-border z-depth-2-top z-depth-2--hover cardhover">
+                       <div class="block-image">
+                               <img src="{{'data:image/jpg;base64,' + v.dishImage}}"  style="width:100% ;" class="img-center xxx">
+                       </div>
+                       <div class="block-body text-center">
+                        <h2 class="heading heading-5 strong-600 text-capitalize"> {{v.restaurantName}} </h2>
+                           <h3 class="heading heading-5 strong-600 text-capitalize">
+                                {{v.dishName}}
+                           </h3>
+                           <p class="product-description">
+                                {{v.description}}
+                           </p><br>
+                           <h1 >₹ {{v.price}}</h1>
+                
+                           <div class="product-buttons mt-4" >
+                               <div class="row align-items-center">
+                                   <div class="col-4">
+                                    
+                                      <mat-form-field style="width: 35%;">
+                                        <mat-select [(ngModel)]="QInput" [ngModelOptions]="{standalone: true}">
+                                            
+                                          <mat-option *ngFor="let prf of option" [value]="prf">{{prf}}</mat-option>
+                                         
+                                        </mat-select>
+                                      </mat-form-field>
+                                   </div>
+                                   <div class="col-5">
+                                    <button type="button" class="btn btn-block btn-primary btn-circle btn-icon-left" (click)="placeOrder(v.emailid,v.restaurantName,v.dishName,v.price,v.description,v.dishImage)">
+                                        <i ></i>Place Order
+                                    </button>
+                                </div>
+                                   <div class="col-3">
+                                       <button type="button" class="btn-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Favorite" (click)="deleteCart(v.emailid,v.restaurantName,v.dishName,v.price,v.description,v.dishImage)">
+                                        <i class='fa fa-trash' style='color: red'></i>
+                                       </button>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+       <br><br>
+               </div>
+           </div><br><br>
+       </div>
+   </div>
+     </body>
