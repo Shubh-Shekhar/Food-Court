@@ -28,7 +28,7 @@ public class UserController {
 
     @PostMapping("/signup")
     public ResponseEntity<?> signup(@RequestBody User user) throws UserAlreadyExistsException {
-//         user.setRole("role_user");
+         user.setRole("role_user");
         return new ResponseEntity<>(userService.signUp(user), HttpStatus.CREATED);
     }
 

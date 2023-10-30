@@ -16,7 +16,7 @@ public class AdminProfileApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AdminProfileApplication.class, args);
-		System.out.println("Admin");
+		System.out.println("====================== Admin-Service is Processing On Port 8085 !!!===========================");
 	}
 
 //

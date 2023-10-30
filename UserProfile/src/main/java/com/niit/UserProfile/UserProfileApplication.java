@@ -18,7 +18,7 @@ public class UserProfileApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(UserProfileApplication.class, args);
-		System.out.println("user");
+		System.out.println("=======================User-Profile is Running on Port 8083 !!!=====================================");
 	}
 
 //

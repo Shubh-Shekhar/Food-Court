@@ -14,7 +14,7 @@ public class ApigatewayApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApigatewayApplication.class, args);
-		System.out.println("API");
+		System.out.println("======================= API is Running on Port 8050 !!!================================");
 	}
 
 //	@Bean
