@@ -1,7 +1,4 @@
-<!-- Add Content Here -->
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
 <mat-sidenav-container class="sidenav-container" >
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'">
@@ -17,7 +14,7 @@
         </a>
         <a mat-list-item (click)="cart()">
           <mat-icon class="side-nav-icons">add_shopping_cart</mat-icon> Cart
-          <span class='badge badge-warning mz' id='lblCartCount'> {{cartlength}} </span>
+          <span class='badge badge-warning mz' > {{cartlength}} </span>
         </a>
         <a mat-list-item (click)="favourite()">
           <mat-icon class="side-nav-icons">favorite_border</mat-icon> Favorites
@@ -123,11 +120,10 @@
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © Email Id: dineshfoodcourt@gmail.com
-      <a mat-list-icon="fa fa-facebook-square" href="https://www.facebook.com/">Facebook</a>
      <i class="fa fa-facebook-square"style="font-size:20px;margin-left:5px" aria-hidden="true"></i>
-<!--    <i class="fa fa-twitter-square" style="font-size:20px;margin-left:5px"aria-hidden="true"></i>-->
-<!--    <i class="fa fa-youtube-square"style="font-size:20px;margin-left:5px" aria-hidden="true"></i>-->
-<!--    <i class="fa fa-github-square" style="font-size:20px;margin-left:5px" aria-hidden="true"></i>-->
+    <i class="fa fa-twitter-square" style="font-size:20px;margin-left:5px"aria-hidden="true"></i>
+    <i class="fa fa-youtube-square"style="font-size:20px;margin-left:5px" aria-hidden="true"></i>
+    <i class="fa fa-github-square" style="font-size:20px;margin-left:5px" aria-hidden="true"></i>
   </div>
   </footer>
 </div>
