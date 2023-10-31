@@ -16,7 +16,7 @@
           <mat-icon class="side-nav-icons">home</mat-icon>Home
         </a>
         <a mat-list-item (click)="cart()">
-          <mat-icon class="side-nav-icons">add_shopping_cart</mat-icon> Cart 
+          <mat-icon class="side-nav-icons">add_shopping_cart</mat-icon> Cart
           <span class='badge badge-warning mz' id='lblCartCount'> {{cartlength}} </span>
         </a>
         <a mat-list-item (click)="favourite()">
@@ -29,19 +29,19 @@
         <!-- <a mat-list-item href="#">
           <mat-icon class="side-nav-icons">history</mat-icon> History
         </a> -->
-        
+
         <!-- <a mat-list-item routerLink="/upload">Upload</a>
         <a mat-list-item routerLink="/live">LiveStream</a> -->
         <hr class="hr-class">
         <p class="list-para">
-        
+
       </div>
     </mat-nav-list>
 
   </mat-sidenav>
 
   <mat-sidenav-content >
-    
+
     <div class="head">
     <div class="head-flex" >
 
@@ -56,7 +56,7 @@
         }]">Foodie App</span>
         <!-- <span>search bar and setting icons</span> -->
       </mat-toolbar>
-      
+
 
       <mat-toolbar style="justify-content: center;" color="primary">
         <mat-form-field style="width: 40%;">
@@ -65,16 +65,16 @@
         <mat-form-field [formGroup]="searchForm">
           <mat-label>Select an option</mat-label>
           <mat-select formControlName="search">
-           
+
             <mat-option *ngFor="let prf of option" [value]="prf">{{prf}}</mat-option>
-           
+
           </mat-select>
         </mat-form-field>
-        
+
         <button mat-icon-button (click)="search()">
           <mat-icon matTooltip="Search">search</mat-icon>
         </button>
-        
+
       </mat-toolbar>
 
       <mat-toolbar style="justify-content:right;" color="primary">
@@ -83,15 +83,15 @@
           <div class="logo-image">
             <img [src]="path" class="img-fluid">
           </div>
-          
+
         </button>
-      
+
 
         <!-- <button mat-icon-button>
           <mat-icon matTooltip="Log Out">login</mat-icon>
-          
+
         </button> -->
-       
+
         <mat-menu #menu="matMenu">
           <!-- dropdwon -->
           <button mat-menu-item (click)="signout()">
@@ -123,10 +123,11 @@
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © Email Id: dineshfoodcourt@gmail.com
+      <a mat-list-icon="fa fa-facebook-square" href="https://www.facebook.com/">Facebook</a>
      <i class="fa fa-facebook-square"style="font-size:20px;margin-left:5px" aria-hidden="true"></i>
-    <i class="fa fa-twitter-square" style="font-size:20px;margin-left:5px"aria-hidden="true"></i>
-    <i class="fa fa-youtube-square"style="font-size:20px;margin-left:5px" aria-hidden="true"></i>
-    <i class="fa fa-github-square" style="font-size:20px;margin-left:5px" aria-hidden="true"></i>
+<!--    <i class="fa fa-twitter-square" style="font-size:20px;margin-left:5px"aria-hidden="true"></i>-->
+<!--    <i class="fa fa-youtube-square"style="font-size:20px;margin-left:5px" aria-hidden="true"></i>-->
+<!--    <i class="fa fa-github-square" style="font-size:20px;margin-left:5px" aria-hidden="true"></i>-->
   </div>
   </footer>
 </div>

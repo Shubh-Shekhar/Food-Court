@@ -1,6 +1,6 @@
 <link
-  rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css"
+  rel="stylesheet"
 />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
@@ -8,15 +8,14 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     class="sidenav"
     fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
   >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <div class="sideNav-pad">
         <a
-          mat-list-item
           [routerLink]="[
             '/nav',
             {
@@ -25,11 +24,12 @@
               }
             }
           ]"
+          mat-list-item
         >
-          <mat-icon class="side-nav-icons">home</mat-icon>Home
+          <mat-icon class="side-nav-icons">home</mat-icon>
+          Home
         </a>
         <a
-          mat-list-item
           [routerLink]="[
             '/nav',
             {
@@ -38,8 +38,10 @@
               }
             }
           ]"
+          mat-list-item
         >
-          <mat-icon class="side-nav-icons">explore</mat-icon>Restaurant Details
+          <mat-icon class="side-nav-icons">explore</mat-icon>
+          Restaurant Details
         </a>
       </div>
     </mat-nav-list>
@@ -50,20 +52,20 @@
       <div class="head-flex">
         <mat-toolbar color="primary">
           <button
-            type="button"
+            (click)="drawer.toggle()"
             aria-label="Toggle sidenav"
             mat-icon-button
-            (click)="drawer.toggle()"
+            type="button"
           >
             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
           </button>
         </mat-toolbar>
 
-        <mat-toolbar style="justify-content: center" color="primary">
+        <mat-toolbar color="primary" style="justify-content: center">
           <span>Admin Profile</span>
         </mat-toolbar>
-        <mat-toolbar style="justify-content: right" color="primary">
-          <button mat-icon-button (click)="signout()">
+        <mat-toolbar color="primary" style="justify-content: right">
+          <button (click)="signout()" mat-icon-button>
             <mat-icon>logout</mat-icon>
           </button>
         </mat-toolbar>

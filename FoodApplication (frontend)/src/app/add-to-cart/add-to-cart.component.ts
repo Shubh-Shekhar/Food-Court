@@ -35,7 +35,7 @@ export class AddToCartComponent implements OnInit {
    placeOrder(email:any,resturantName:any,dishName:any,price:any,discription:any,dishImage:any)
    {
 
-   
+
     const date=new Date();
     let today =this.datepipe.transform(date, 'MM/dd/YY HH:MM:SS');
     console.log(today)
@@ -50,7 +50,7 @@ export class AddToCartComponent implements OnInit {
       "uemailid":window.localStorage.getItem("loginemail"),
       "orderDate":today
     }
-    
+
     this.deleteCart(email,resturantName,dishName,price,discription,dishImage)
     this.http.post<any>("http://localhost:8050/orderHistory/post",order).subscribe(
         success=>{
@@ -77,16 +77,13 @@ export class AddToCartComponent implements OnInit {
       }
     );
    }
-   
+
    deleteCart(data:any,resturantName:any,dishName:any,price:any,discription:any,dishImage:any)
    {
     return this.http.delete("http://localhost:8050/addToCart/delete/cart/"+window.localStorage.getItem('loginemail')+"/"+data+"/"+dishName).subscribe(
       success=>{
-        
-        iziToast.success({
-          message: "Deleted",
-          position:"bottomRight"
-      })// alert("Iteams deleted");
+
+
         this.ngOnInit();
         this.comp.ngOnInit()
 
