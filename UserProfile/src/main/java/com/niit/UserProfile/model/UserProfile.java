@@ -13,5 +13,4 @@ public class UserProfile {
 
   private String name,emailid,password,address,path,filename;
 
-
 }
