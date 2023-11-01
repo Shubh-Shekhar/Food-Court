@@ -1,4 +1,5 @@
-  <div class="container">
+  <body>
+<div class="container">
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
@@ -22,14 +23,14 @@
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-				
+
                 <input type="text" formControlName="uemailid" placeholder="Enter your email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
                 <input type="password" formControlName="upassword" placeholder="Enter your password" required>
               </div>
-            
+
               <div class="button input-box" >
                 <button type="button" class="btn btn-secondary btn-rounded xz"  (click)="loginCheck()" [disabled]="loginFormGroup.invalid">Login</button>
               </div>
@@ -39,19 +40,19 @@
       </div>
         <div class="signup-form">
           <div class="title">Signup</div>
-		  
+
         <form [formGroup]="registerFormGroup">
             <div class="input-boxes">
-				
+
               <div class="input-box">
                 <i class="fas fa-user"></i>
-			
+
                 <input type="text" formControlName="name" placeholder="Enter your name" required >
-				
+
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-				
+
                 <input type="text" formControlName="emailid" placeholder="Enter your email" required (keyup)="onEmailChanged($event)">
               </div>
               <div class="input-box">
@@ -64,10 +65,10 @@
               </div>
 
               <div><span >Choose Profile Pic</span></div>
-              
-              
+
+
               <div class="input-box">
-                
+
                 <i class="fas fa-solid fa-image"></i>
                 <input #myInput type="file"  required (change)="onFileChanged($event)">
               </div>
@@ -75,12 +76,13 @@
               <div class="button input-box"  >
                 <button type="button"  class="btn btn-secondary btn-rounded xz" (click)="register()" [disabled]="registerFormGroup.invalid" >
                    SignUp
-                </button> 
+                </button>
               </div>
               <div class="text sign-up-text">Already have an account? <label for="flip" >Login now</label></div>
             </div>
-      </form> 
+      </form>
     </div>
     </div>
     </div>
   </div>
+  </body>
