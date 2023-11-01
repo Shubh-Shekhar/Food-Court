@@ -25,7 +25,6 @@
           <div class="input-boxes">
             <div class="input-box">
               <i class="fas fa-envelope"></i>
-
               <input formControlName="uemailid" placeholder="Enter your email" required type="text">
             </div>
             <div class="input-box">
@@ -34,7 +33,8 @@
             </div>
 
             <div class="button input-box">
-              <button (click)="loginCheck()" [disabled]="loginFormGroup.invalid" class="btn btn-secondary btn-rounded xz"
+              <button (click)="loginCheck()" [disabled]="loginFormGroup.invalid"
+                      class="btn btn-secondary btn-rounded xz"
                       type="button">Login
               </button>
             </div>
@@ -79,7 +79,8 @@
             </div>
 
             <div class="button input-box">
-              <button (click)="register()" [disabled]="registerFormGroup.invalid" class="btn btn-secondary btn-rounded xz"
+              <button (click)="register()" [disabled]="registerFormGroup.invalid"
+                      class="btn btn-secondary btn-rounded xz"
                       type="button">
                 SignUp
               </button>
