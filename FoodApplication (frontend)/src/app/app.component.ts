@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import { restaurant } from './restaurant';
-import { RestaurantService } from './restaurant.service';
+import { restaurant } from './Models/restaurant';
+import { RestaurantService } from './Services/restaurant.service';
 
 @Component({
   selector: 'app-root',

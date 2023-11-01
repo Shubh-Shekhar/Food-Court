@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Favourite } from '../favourite';
+import { Favourite } from '../Models/favourite';
 import { NavigationUserComponent } from '../navigation-user/navigation-user.component';
-import { Restproduct } from '../restproduct';
+import { Restproduct } from '../Models/restproduct';
 import iziToast from 'izitoast';
 @Component({
   selector: 'app-add-to-favourite',

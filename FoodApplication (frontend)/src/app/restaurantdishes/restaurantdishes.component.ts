@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Favourite } from '../favourite';
+import { Favourite } from '../Models/favourite';
 import { NavigationUserComponent } from '../navigation-user/navigation-user.component';
 import iziToast from 'izitoast';
 @Component({

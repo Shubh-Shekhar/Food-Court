@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import iziToast from 'izitoast';
-import { RestaurantService } from '../restaurant.service';
-import { Restproduct } from '../restproduct';
+import { RestaurantService } from '../Services/restaurant.service';
+import { Restproduct } from '../Models/restproduct';
 
 @Component({
   selector: 'app-restproduct',

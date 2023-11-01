@@ -2,10 +2,10 @@ import { DatePipe } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import iziToast from 'izitoast';
-import { Favourite } from '../favourite';
-import { Mail } from '../mail';
+import { Favourite } from '../Models/favourite';
+import { Mail } from '../Models/mail';
 import { NavigationUserComponent } from '../navigation-user/navigation-user.component';
-import { OrderHistory } from '../order-history';
+import { OrderHistory } from '../Models/order-history';
 
 @Component({
   selector: 'app-add-to-cart',

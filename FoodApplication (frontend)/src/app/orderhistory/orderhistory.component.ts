@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Favourite } from '../favourite';
-import { Mail } from '../mail';
+import { Favourite } from '../Models/favourite';
+import { Mail } from '../Models/mail';
 
 @Component({
   selector: 'app-orderhistory',
@@ -26,7 +26,7 @@ export class OrderhistoryComponent implements OnInit {
    }
    placeOrder(data:any,resturantName:any,dishName:any,quantity:any,price:any,discription:any,dishImage:any)
    {
-    this.msg="This is Mail Generated for Testing purpose by team1 "+" Thank you for ordering dinner from "+resturantName+" We hope you enjoyed your meal from "+resturantName+" You can write them a review by clicking";
+    this.msg="This is Mail Generated for Testing purpose  "+" Thank you for ordering dinner from "+resturantName+" We hope you enjoyed your meal from "+resturantName+" You can write them a review by clicking";
     let object:Mail={
       "recipient":window.localStorage.getItem("loginemail"),
       "msgBody":this.msg,

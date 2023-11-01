@@ -16,59 +16,82 @@ import { RestDashboardComponent } from './rest-dashboard/rest-dashboard.componen
 
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { RestaurantdishesComponent } from './restaurantdishes/restaurantdishes.component';
-import { Restproduct } from './restproduct';
+import { Restproduct } from './Models/restproduct';
 import { RestproductComponent } from './restproduct/restproduct.component';
 import { SearchByComponent } from './search-by/search-by.component';
 import { SearchBydishNameComponent } from './search-bydish-name/search-bydish-name.component';
 
 const routes: Routes = [
   {
-    path:'',component:LoginComponent
-  }
-  ,{
-    path:'nav',component:NavigationComponent,canActivate:[AuthAdminGuard],children:[
-      {path:'admin',outlet:'restaurant',component:AdminComponent},
-      {path:'resDetails',outlet:'restaurant',component:RestaurantDetailsComponent},
-  {path:"rest",outlet:'restaurant',component:RestproductComponent},
-  {
-    path:'admindish',outlet:'restaurant',component:AdminSideDishesComponent
-  }
-  
-    ]
+    path: '',
+    component: LoginComponent,
   },
-  
   {
-    path:'profile',component:NavigationUserComponent,canActivate:[AuthGuard],children:[
+    path: 'nav',
+    component: NavigationComponent,
+    canActivate: [AuthAdminGuard],
+    children: [
+      { path: 'admin', outlet: 'restaurant', component: AdminComponent },
       {
-        path:'dashboard',outlet:'restdata',component:RestDashboardComponent
-      }
-      ,
-      {
-        path:'dishes',outlet:'restdata',component:RestaurantdishesComponent
+        path: 'resDetails',
+        outlet: 'restaurant',
+        component: RestaurantDetailsComponent,
       },
+      { path: 'rest', outlet: 'restaurant', component: RestproductComponent },
       {
-        path:'fav',outlet:'restdata',component:AddToFavouriteComponent
+        path: 'admindish',
+        outlet: 'restaurant',
+        component: AdminSideDishesComponent,
       },
-      {
-        path:'cart',outlet:'restdata',component:AddToCartComponent
-      },
-      {
-        path:'search',outlet:'restdata',component:SearchByComponent
-      },
-      {
-        path:'searchbyDish',outlet:'restdata',component:SearchBydishNameComponent
-      },
-      {
-        path:'history',outlet:'restdata',component:OrderhistoryComponent
-      }    
-    ]
+    ],
   },
-  
- 
+
+  {
+    path: 'profile',
+    component: NavigationUserComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'dashboard',
+        outlet: 'restdata',
+        component: RestDashboardComponent,
+      },
+      {
+        path: 'dishes',
+        outlet: 'restdata',
+        component: RestaurantdishesComponent,
+      },
+      {
+        path: 'fav',
+        outlet: 'restdata',
+        component: AddToFavouriteComponent,
+      },
+      {
+        path: 'cart',
+        outlet: 'restdata',
+        component: AddToCartComponent,
+      },
+      {
+        path: 'search',
+        outlet: 'restdata',
+        component: SearchByComponent,
+      },
+      {
+        path: 'searchbyDish',
+        outlet: 'restdata',
+        component: SearchBydishNameComponent,
+      },
+      {
+        path: 'history',
+        outlet: 'restdata',
+        component: OrderhistoryComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

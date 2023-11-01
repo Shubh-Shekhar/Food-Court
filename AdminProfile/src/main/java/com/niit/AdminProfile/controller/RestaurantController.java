@@ -21,12 +21,6 @@ public class RestaurantController {
     @Autowired
     RestaurantService restaurantService;
 
-//    @PostMapping("/addrestaurant")
-//    public ResponseEntity<?>  addRestaurantDeatils(@RequestBody Restaurant restaurant) throws RestaurantAlreadyExistException{
-//
-//        return new ResponseEntity<>(restaurantService.addRestaurantDetails(restaurant), HttpStatus.CREATED);
-//    }
-
     @PostMapping("/addrestaurant")
     public ResponseEntity<?> signup(@RequestPart("profile") Restaurant restaurant, @RequestPart("imageFile") MultipartFile file ) throws IOException, RestaurantAlreadyExistException {
         System.out.println("Original Image Byte Size - " + file.getBytes().length);

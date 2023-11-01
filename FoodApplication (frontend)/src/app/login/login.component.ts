@@ -2,10 +2,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { login } from '../login';
-import { LoginService } from '../login.service';
+import { login } from '../Models/login';
+import { LoginService } from '../Services/login.service';
 import { RestaurantdishesComponent } from '../restaurantdishes/restaurantdishes.component';
-import { signup } from '../signup';
+import { signup } from '../Models/signup';
 import { ViewChild } from '@angular/core';
 import iziToast from 'izitoast';
 
@@ -24,7 +24,9 @@ export class LoginComponent implements OnInit {
   message: any;
   path: any;
   target: any;
+
   constructor(private loginservice:LoginService,private route:Router,private http:HttpClient) { }
+
 
   ngOnInit(): void {
     this.http.get<any>("http://localhost:8050/user/getAll").subscribe(
@@ -45,7 +47,6 @@ export class LoginComponent implements OnInit {
     "password": new FormControl('',[Validators.required]),
     "address": new FormControl('',[Validators.required])
   });
-
 
   public onFileChanged(event:any) {
     //Select File

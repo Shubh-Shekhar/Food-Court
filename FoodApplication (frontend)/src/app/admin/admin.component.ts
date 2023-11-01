@@ -3,11 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
-import iziToast from 'izitoast';
 import { AuthAdminGuard } from '../authGuard/auth-admin.guard';
-import { AuthAdminService } from '../authGuard/auth-admin.service';
-import { restaurant } from '../restaurant';
-import { RestaurantService } from '../restaurant.service';
+import { AuthAdminService } from '../Services/auth-admin.service';
+import { restaurant } from '../Models/restaurant';
+import { RestaurantService } from '../Services/restaurant.service';
+import iziToast from 'izitoast';
 
 @Component({
   selector: 'app-admin',
@@ -35,20 +35,6 @@ export class AdminComponent implements OnInit {
     }
 
   registerRestaurant(){
-    // this.registrationData=this.restaurantform.value;
-    // console.log(this.restaurantform.value);
-    // this.resService.addRestaurant(this.registrationData).subscribe(
-    //  success =>{
-    //     alert("Restaurant Added Successfully")
-    //     this.restaurantform.reset();
-    //     this.ngOnInit();
-    //  },
-    //  error=>{
-    //    alert("Restaurant Already Present")
-    //  }
-     
-    // )
-
     console.log(this.restaurantform.value)
     const formData = new FormData();
     this.registrationData=this.restaurantform.value;

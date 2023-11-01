@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { RestaurantdishesComponent } from '../restaurantdishes/restaurantdishes.component';
 
 @Component({
   selector: 'app-search-by',

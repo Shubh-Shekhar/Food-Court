@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
 import { LoginComponent } from '../login/login.component';
-import { RestaurantService } from '../restaurant.service';
+import { RestaurantService } from '../Services/restaurant.service';
 import { RestaurantdishesComponent } from '../restaurantdishes/restaurantdishes.component';
 
 @Component({
