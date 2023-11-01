@@ -6,18 +6,17 @@ import { login } from '../Models/login';
   providedIn: 'root'
 })
 export class LoginService {
-  
 
-  constructor(private httpclient:HttpClient) { }
 
- logincheck(logindata: login) {
-    return this.httpclient.post<any>("http://localhost:8050/user/login",logindata)
+  constructor(private httpclient: HttpClient) { }
+
+  logincheck(logindata: login) {
+    return this.httpclient.post<any>("http://localhost:8050/user/login", logindata)
   }
-  
-  
-  register(signupdata:any) {
-    return this.httpclient.post<any>("http://localhost:8050/userprofile/signup","imageFile",signupdata)
+
+
+  register(signupdata: any) {
+    return this.httpclient.post<any>("http://localhost:8050/userprofile/signup", "imageFile", signupdata)
   }
- 
 
 }
