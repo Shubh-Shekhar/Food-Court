@@ -36,7 +36,7 @@ public class UserProfileController {
 
     @PostMapping("/signup")
     public ResponseEntity<?> signup(@RequestPart("profile") UserProfile userProfile, @RequestPart("imageFile") MultipartFile file ) throws IOException {
-        System.out.println("Original Image Byte Size - " + file.getBytes().length);
+        System.out.println("Original Image Byte Size - " + file.getBytes().length);  //500kb
         Path currentPath = Paths.get("UserProfile");
         Path absolutePath = currentPath.toAbsolutePath();
         UserProfile profile=new UserProfile();

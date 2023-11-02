@@ -1,12 +1,13 @@
 package com.niit.AdminProfile.service;
 
+import com.niit.AdminProfile.exception.RestaurentMenuAlradyPresent;
 import com.niit.AdminProfile.model.RestaurantMenu;
 
 import java.util.List;
 
 public interface RestaurantMenuService
 {
-    public abstract RestaurantMenu addDishesDetails (RestaurantMenu restaurantMenu) throws Exception;
+    public abstract RestaurantMenu addDishesDetails (RestaurantMenu restaurantMenu) throws Exception, RestaurentMenuAlradyPresent;
     public abstract RestaurantMenu updateDishesDetails(RestaurantMenu restaurantMenu) throws Exception;
     public abstract boolean removeDishes(String emailid,String dishName) throws Exception;
 

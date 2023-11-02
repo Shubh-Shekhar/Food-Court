@@ -20,7 +20,6 @@ public class EmailServiceImpl implements EmailService{
     @Value("${spring.mail.username}") private String sender;
 
 
-    // Method 1
     // To send a simple email
     public String sendSimpleMail(EmailDetails details)
     {
@@ -41,7 +40,7 @@ public class EmailServiceImpl implements EmailService{
             mailMessage.setSubject(details.getSubject());
 
             // Sending the mail
-            System.out.println("================================================");
+            System.out.println("====================Mail Is coming!!!============================");
             System.out.println(mailMessage);
             javaMailSender.send(mailMessage);
             return "Mail Sent Successfully...";
@@ -66,8 +65,8 @@ public class EmailServiceImpl implements EmailService{
 
         try {
 
-            // Setting multipart as true for attachments to
-            // be send
+            // Setting multipart as true for attachments to be send
+
             mimeMessageHelper
                     = new MimeMessageHelper(mimeMessage, true);
             mimeMessageHelper.setFrom(sender);

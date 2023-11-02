@@ -17,10 +17,6 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @AllArgsConstructor
 @Entity
 public class User {
-
-//    @GeneratedValue(strategy= GenerationType.SEQUENCE)
-//    int id;
-
     @Id
     String uemailid;
 

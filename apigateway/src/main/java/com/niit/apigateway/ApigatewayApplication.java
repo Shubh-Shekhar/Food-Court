@@ -16,21 +16,4 @@ public class ApigatewayApplication {
 		SpringApplication.run(ApigatewayApplication.class, args);
 		System.out.println("======================= API is Running on Port 8050 !!!================================");
 	}
-
-//	@Bean
-//	public CorsFilter corsFilter() {
-//		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//		final CorsConfiguration config = new CorsConfiguration();
-//		config.setAllowCredentials(true);
-//		config.addAllowedOrigin("*");
-//		config.addAllowedHeader("*");
-//		config.addAllowedMethod("GET");
-//		config.addAllowedMethod("POST");
-//		config.addAllowedMethod("DELETE");
-//		config.addAllowedMethod("PUT");
-//		config.setMaxAge(18000L);
-//		source.registerCorsConfiguration("/**", config);
-//		return new CorsFilter(source);
-//	}
-
 }

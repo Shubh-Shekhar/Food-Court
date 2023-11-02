@@ -1,5 +1,6 @@
 package com.niit.AdminProfile.service;
 
+import com.niit.AdminProfile.exception.RestaurentMenuAlradyPresent;
 import com.niit.AdminProfile.model.RestaurantMenu;
 import com.niit.AdminProfile.repository.RestaurantMenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +15,11 @@ public class RestaurantMenuServiceImpl implements RestaurantMenuService{
     RestaurantMenuRepository restaurantMenuRepository;
 
     @Override
-    public RestaurantMenu addDishesDetails(RestaurantMenu restaurantMenu) throws Exception {
+    public RestaurantMenu addDishesDetails(RestaurantMenu restaurantMenu) throws RestaurentMenuAlradyPresent {
         RestaurantMenu restaurantMenu1=restaurantMenuRepository.findByEmailidAndDishName(restaurantMenu.getEmailid(), restaurantMenu.getDishName());
         if(restaurantMenu1!=null)
         {
-            throw new Exception();
+            throw new RestaurentMenuAlradyPresent();
 
         }
         else {
@@ -30,18 +31,6 @@ public class RestaurantMenuServiceImpl implements RestaurantMenuService{
     public RestaurantMenu updateDishesDetails(RestaurantMenu restaurantMenu) throws Exception {
         return null;
     }
-
-//    @Override
-//    public RestaurantMenu updateDishesDetails(RestaurantMenu restaurantMenu) throws Exception {
-
-//       RestaurantMenu restaurantMenu1= restaurantMenuRepository.findByRestaurantNameAndDishName(restaurantMenu.getRestaurantName(),restaurantMenu.getDishName());
-//       if(restaurantMenu1.equals(null)){
-//           throw new Exception();
-//       }
-//       else {
-//           return restaurantMenuRepository.save(restaurantMenu);
-//       }
-//    }
 
     @Override
     public boolean removeDishes(String emailid, String dishName) throws Exception {

@@ -19,19 +19,4 @@ public class UserAuthenticationServiceApplication {
 		System.out.println("=========================UserAuth is Processing on Port 8082 !!!=========================");
 	}
 
-
-
-//	@Bean
-//	public FilterRegistrationBean filterRegistrationBean(){
-//		final CorsConfiguration config= new CorsConfiguration();
-//		config.setAllowCredentials(true);
-//		config.addAllowedOrigin("http://localhost:4200");
-//		config.addAllowedHeader("*");
-//		config.addAllowedMethod("*");
-//		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//		source.registerCorsConfiguration("/**", config);
-//		FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
-//		bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
-//		return bean;
-//	}
 }
