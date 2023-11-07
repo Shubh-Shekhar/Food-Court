@@ -1,35 +1,46 @@
 <div class="container">
-
   <div class="shop-default shop-cards shop-tech">
-
-
     <div class="row">
-      <div *ngFor="let v of data | paginate: { itemsPerPage: 6, currentPage: page,totalItems:totalLength }"
-           class="col-md-4">
-        <div class="block product no-border z-depth-2-top z-depth-2--hover cardhover">
+      <div
+        *ngFor="
+          let v of data
+            | paginate
+              : { itemsPerPage: 6, currentPage: page, totalItems: totalLength }
+        "
+        class="col-md-4"
+      >
+        <div
+          class="block product no-border z-depth-2-top z-depth-2--hover cardhover"
+        >
           <div class="block-image">
+            <img
+              class="img-center xxx"
+              src="{{ 'data:image/jpg;base64,' + v.resImage }}"
+              style="width: 100%"
+            />
 
-            <img class="img-center xxx" src="{{'data:image/jpg;base64,' + v.resImage}}" style="width:100% ;">
-
-            <span class="product-ribbon  product-ribbon-right product-ribbon--style-1 bg-purple text-uppercase"
-                  style="font-size:25px;">{{v.rating}}</span>
+            <span
+              class="product-ribbon product-ribbon-right product-ribbon--style-1 bg-purple text-uppercase"
+              style="font-size: 25px"
+              >{{ v.rating }}*</span
+            >
           </div>
           <div class="block-body text-center">
             <h1 class="heading heading-5 strong-600 text-capitalize">
-
-              {{v.resturantName}}
-
+              {{ v.resturantName }}
             </h1>
-            <p class="product-description">{{v.emailid}}</p>
+            <p class="product-description">{{ v.emailid }}</p>
 
-            <h3>{{v.city}}</h3>
+            <h3>{{ v.city }}</h3>
 
             <div class="product-buttons mt-4">
-              <div class="row align-items-center ">
-
+              <div class="row align-items-center">
                 <div class="col-12">
-                  <button (click)="getDishes(v.emailid)" class="btn btn-block btn-primary btn-circle btn-icon-left"
-                          type="button">
+                  <button
+                    (click)="getDishes(v.emailid)"
+                    class="btn btn-block btn-primary btn-circle btn-icon-left"
+                    type="button"
+                  >
                     <i></i>Check Dishes
                   </button>
                 </div>
@@ -37,12 +48,12 @@
             </div>
           </div>
         </div>
-        <br><br>
+        <br /><br />
       </div>
-
-
     </div>
-    <pagination-controls (pageChange)="page = $event" class="text-center"></pagination-controls>
+    <pagination-controls
+      (pageChange)="page = $event"
+      class="text-center"
+    ></pagination-controls>
   </div>
 </div>
-

@@ -14,7 +14,7 @@ export class AddToFavouriteComponent implements OnInit {
   constructor(private http:HttpClient,private comp:NavigationUserComponent) { }
   ngOnInit(): void {
     let reqHeader = new HttpHeaders().set('Authorization', 'Bearer ' + window.localStorage.getItem('token'));
-    this.http.get<any>("http://localhost:8050/addToFavourite/get/"+localStorage.getItem('loginemail'),{ 'headers': reqHeader })
+    this.http.get<any>("http://localhost:9000/addToFavourite/get/"+localStorage.getItem('loginemail'),{ 'headers': reqHeader })
     .subscribe(
       data => {
         console.log(data)
@@ -33,7 +33,7 @@ export class AddToFavouriteComponent implements OnInit {
       "dishImage":dishImage,
       "uemailid":window.localStorage.getItem("loginemail")
     }
-    this.http.post<any>("http://localhost:8050/addToCart/post",fav)
+    this.http.post<any>("http://localhost:9000/addToCart/post",fav)
     .subscribe(
       success=>{
         console.log(success);
@@ -57,7 +57,7 @@ export class AddToFavouriteComponent implements OnInit {
  
    deletefromFavourite(data:any,resturantName:any,dishName:any,quantity:any,price:any,discription:any,dishImage:any)
    {
-    return this.http.delete("http://localhost:8050/addToFavourite/delete/favourite/"+window.localStorage.getItem('loginemail')+"/"+data+"/"+dishName).subscribe(
+    return this.http.delete("http://localhost:9000/addToFavourite/delete/favourite/"+window.localStorage.getItem('loginemail')+"/"+data+"/"+dishName).subscribe(
       success=>{
         iziToast.success({
           title: 'Success',
