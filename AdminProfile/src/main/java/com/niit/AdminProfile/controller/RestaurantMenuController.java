@@ -1,6 +1,7 @@
 package com.niit.AdminProfile.controller;
 
 import com.niit.AdminProfile.exception.RestaurantAlreadyExistException;
+import com.niit.AdminProfile.exception.RestaurentMenuAlradyPresent;
 import com.niit.AdminProfile.model.Restaurant;
 import com.niit.AdminProfile.model.RestaurantMenu;
 import com.niit.AdminProfile.service.RestaurantMenuService;
@@ -25,7 +26,7 @@ public class RestaurantMenuController {
 
 
     @PostMapping("/addDetails")
-    public ResponseEntity<?> signup(@RequestPart("profile") RestaurantMenu restaurant, @RequestPart("imageFile") MultipartFile file ) throws Exception {
+    public ResponseEntity<?> signup(@RequestPart("profile") RestaurantMenu restaurant, @RequestPart("imageFile") MultipartFile file ) throws RestaurentMenuAlradyPresent, Exception {
         System.out.println("Original Image Byte Size - " + file.getBytes().length);
         RestaurantMenu restaurantMenu=new RestaurantMenu(restaurant.getEmailid(), restaurant.getRestaurantName(), restaurant.getDishName(), restaurant.getQuantity(), restaurant.getPrice(), restaurant.getDescription(), file.getBytes());
         return new ResponseEntity<>(restaurantMenuService.addDishesDetails(restaurantMenu), HttpStatus.CREATED);

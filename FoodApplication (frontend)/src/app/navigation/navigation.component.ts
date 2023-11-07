@@ -7,29 +7,34 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css']
+  styleUrls: ['./navigation.component.css'],
 })
-export class NavigationComponent implements OnInit{
-
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+export class NavigationComponent implements OnInit {
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
     .pipe(
-      map(result => result.matches),
+      map((result) => result.matches),
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver,private router:Router) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-this.router.navigate(['/nav',{
-  outlets:{
-    restaurant:['admin']
-  }
-}])
-    
+    this.router.navigate([
+      '/nav',
+      {
+        outlets: {
+          restaurant: ['admin'],
+        },
+      },
+    ]);
   }
 
-  signout(){
+  signout() {
     window.localStorage.clear();
-    this.router.navigate([''])
+    this.router.navigate(['']);
   }
 }

@@ -21,18 +21,4 @@ public class UserProfileApplication {
 		System.out.println("=======================User-Profile is Running on Port 8083 !!!=====================================");
 	}
 
-//
-//	@Bean
-//	public FilterRegistrationBean filterRegistrationBean(){
-//		final CorsConfiguration config= new CorsConfiguration();
-//		config.setAllowCredentials(true);
-//		config.addAllowedOrigin("http://localhost:4200");
-//		config.addAllowedHeader("*");
-//		config.addAllowedMethod("*");
-//		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//		source.registerCorsConfiguration("/**", config);
-//		FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
-//		bean.setOrder(Ordered.HIGHEST_PRECEDENCE);
-//		return bean;
-//	}
 }

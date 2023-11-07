@@ -5,42 +5,50 @@ import iziToast from 'izitoast';
 @Component({
   selector: 'app-admin-side-dishes',
   templateUrl: './admin-side-dishes.component.html',
-  styleUrls: ['./admin-side-dishes.component.css']
+  styleUrls: ['./admin-side-dishes.component.css'],
 })
 export class AdminSideDishesComponent implements OnInit {
   message: any;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    let reqHeader = new HttpHeaders().set('Authorization', 'Bearer ' + window.localStorage.getItem('token'));
+    let reqHeader = new HttpHeaders().set(
+      'Authorization',
+      'Bearer ' + window.localStorage.getItem('token')
+    );
 
-    this.http.get<any>("http://localhost:8050/admin/menu/getProducts/"+window.localStorage.getItem('dishemail'),{ 'headers': reqHeader })
-    .subscribe(
-      data => {
-        console.log(data)
-        this.message=data; 
+    this.http
+      .get<any>(
+        'http://localhost:9000/admin/menu/getProducts/' +
+          window.localStorage.getItem('dishemail'),
+        { headers: reqHeader }
+      )
+      .subscribe((data) => {
+        console.log(data);
+        this.message = data;
         // if(data.length==0){
         //   alert("Something Went Wrong")
         // }
-        
-         
-        
-  })
+      });
   }
-  delete(email:any,dish:any){
-    let reqHeader = new HttpHeaders().set('Authorization', 'Bearer ' + window.localStorage.getItem('token'));
-  this.http.delete<any>("http://localhost:8050/admin/menu/deletedish/"+email+"/"+dish,{ 'headers': reqHeader }).subscribe(
-    success=>{
-      console.log(success)
-      iziToast.success({
-        message: "Deleted",
-        position:"topCenter"
-    })
-      this.ngOnInit();
-    }
-  );
-  
+  delete(email: any, dish: any) {
+    let reqHeader = new HttpHeaders().set(
+      'Authorization',
+      'Bearer ' + window.localStorage.getItem('token')
+    );
+    this.http
+      .delete<any>(
+        'http://localhost:9000/admin/menu/deletedish/' + email + '/' + dish,
+        { headers: reqHeader }
+      )
+      .subscribe((success) => {
+        console.log(success);
+        iziToast.success({
+          message: 'Deleted',
+          position: 'topCenter',
+        });
+        this.ngOnInit();
+      });
   }
-
 }
