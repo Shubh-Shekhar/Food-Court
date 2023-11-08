@@ -19,4 +19,18 @@ public class AdminProfileApplication {
 		System.out.println("====================== Admin-Service is Processing On Port 8085 !!!===========================");
 	}
 
+//	@Bean
+//	public FilterRegistrationBean filterUrl(){
+//		FilterRegistrationBean filterRegistrationBean=new FilterRegistrationBean();
+//		filterRegistrationBean.setFilter(new JwtFilter());
+//		filterRegistrationBean.addUrlPatterns("/addToFavourite/post","/addToFavourite/get/*","/addToFavourite/delete/favourite/*","/addToCart/post","/addToCart/get/*","/addToCart/delete/cart/*","/orderHistory/post","/orderHistory/get/*",
+//				"/admin/addrestaurant","/admin/removerestaurant/*","/admin/getrestaurant","/admin/search/*","/admin/searchbycity/*",
+//				"/admin/menu/addDetails","/admin/menu/getProducts/*","/admin/menu/getProducts","/admin/menu/deletedish/*","/admin/menu/deletedish/*","/admin/menu/searchbydishname/*");
+//
+//
+//		return filterRegistrationBean;
+//
+//	}
+
+
 }

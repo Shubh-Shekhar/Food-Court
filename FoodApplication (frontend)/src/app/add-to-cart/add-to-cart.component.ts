@@ -13,7 +13,7 @@ import { OrderHistory } from '../Models/order-history';
   styleUrls: ['./add-to-cart.component.css'],
 })
 export class AddToCartComponent implements OnInit {
-  [x: string]: any;
+  // [x: string]: any;
   data: any;
   msg: any;
   cart: Favourite;
