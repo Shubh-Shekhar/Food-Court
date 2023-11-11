@@ -11,8 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-
-public class JwtFilter extends GenericFilterBean {
+public class JwtFilterForAdmin extends GenericFilterBean {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
@@ -26,7 +25,7 @@ public class JwtFilter extends GenericFilterBean {
         } else {
             String token = authHeader.substring(7);
 
-            Claims claims = Jwts.parser().setSigningKey("mykey").parseClaimsJws(token).getBody();
+            Claims claims = Jwts.parser().setSigningKey("mykeyAdmin").parseClaimsJws(token).getBody();
 
             System.out.println("Claims From Token:" + claims);
 

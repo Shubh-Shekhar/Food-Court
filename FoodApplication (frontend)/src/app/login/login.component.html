@@ -10,10 +10,8 @@
       </div>
       <div class="back">
         <div class="text">
-          <span class="text-1"
-            >Complete miles of journey <br />
-            with one step</span
-          >
+          <span class="text-1">Complete miles of journey <br />
+            with one step</span>
           <span class="text-2">Let's get started</span>
         </div>
       </div>
@@ -27,32 +25,18 @@
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
 
-                <input
-                  type="text"
-                  formControlName="uemailid"
-                  placeholder="Enter your email"
-                  required
-                />
+                <input type="text" formControlName="uemailid" placeholder="Enter your email" required />
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input
-                  type="password"
-                  formControlName="upassword"
-                  placeholder="Enter your password"
-                  required
-                />
+                <input type="password" formControlName="upassword" placeholder="Enter your password" required />
               </div>
-              
+
               <!-- "loginCheck" function should be called when the element is clicked. -->
 
               <div class="button input-box">
-                <button
-                  type="button"
-                  class="btn btn-secondary btn-rounded xz"
-                  (click)="loginCheck()"
-                  [disabled]="loginFormGroup.invalid"
-                >
+                <button type="button" class="btn btn-secondary btn-rounded xz" (click)="loginCheck()"
+                  [disabled]="loginFormGroup.invalid">
                   Login
                 </button>
               </div>
@@ -70,64 +54,35 @@
               <div class="input-box">
                 <i class="fas fa-user"></i>
 
-                <input
-                  type="text"
-                  formControlName="name"
-                  placeholder="Enter your name"
-                  required
-                />
+                <input type="text" formControlName="name" placeholder="Enter your name" required />
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
 
-                <input
-                  type="text"
-                  formControlName="emailid"
-                  placeholder="Enter your email"
-                  required
-                  (keyup)="onEmailChanged($event)"
-                />
+                <input type="text" formControlName="emailid" placeholder="Enter your email" required
+                  (keyup)="onEmailChanged($event)" />
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input
-                  type="password"
-                  formControlName="password"
-                  placeholder="Enter your password"
-                  required
-                />
+                <input type="password" formControlName="password" placeholder="Enter your password" required />
               </div>
               <div class="input-box">
                 <i class="fas fa-address-card"></i>
-                <input
-                  type="text"
-                  formControlName="address"
-                  placeholder="Enter your address"
-                  required
-                />
+                <input type="text" formControlName="address" placeholder="Enter your address" required />
               </div>
 
               <div><span>Choose Profile Pic</span></div>
 
               <div class="input-box">
                 <i class="fas fa-solid fa-image"></i>
-                <input
-                  #myInput
-                  type="file"
-                  required
-                  (change)="onFileChanged($event)"
-                />
+                <input #myInput type="file" required (change)="onFileChanged($event)" />
               </div>
 
-                <!-- "register()" function should be called when the element is clicked. -->
+              <!-- "register()" function should be called when the element is clicked. -->
 
               <div class="button input-box">
-                <button
-                  type="button"
-                  class="btn btn-secondary btn-rounded xz"
-                  (click)="register()"
-                  [disabled]="registerFormGroup.invalid"
-                >
+                <button type="button" class="btn btn-secondary btn-rounded xz" (click)="register()"
+                  [disabled]="registerFormGroup.invalid">
                   SignUp
                 </button>
               </div>

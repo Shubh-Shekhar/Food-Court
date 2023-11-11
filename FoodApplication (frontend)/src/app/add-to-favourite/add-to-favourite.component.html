@@ -2,15 +2,9 @@
   <div class="shop-default shop-cards shop-tech">
     <div class="row">
       <div class="col-md-4" *ngFor="let v of data">
-        <div
-          class="block product no-border z-depth-2-top z-depth-2--hover cardhover"
-        >
+        <div class="block product no-border z-depth-2-top z-depth-2--hover cardhover">
           <div class="block-image">
-            <img
-              src="{{ 'data:image/jpg;base64,' + v.dishImage }}"
-              style="width: 100%"
-              class="img-center xxx"
-            />
+            <img src="{{ 'data:image/jpg;base64,' + v.dishImage }}" style="width: 100%" class="img-center xxx" />
           </div>
           <div class="block-body text-center">
             <h2 class="heading heading-5 strong-600 text-capitalize">
@@ -29,10 +23,7 @@
                   <h1>₹ {{ v.price }}</h1>
                 </div>
                 <div class="col-5">
-                  <button
-                    type="button"
-                    class="btn btn-block btn-primary btn-circle btn-icon-left"
-                    (click)="
+                  <button type="button" class="btn btn-block btn-primary btn-circle btn-icon-left" (click)="
                       addtoCart(
                         v.emailid,
                         v.restaurantName,
@@ -42,21 +33,14 @@
                         v.description,
                         v.dishImage
                       )
-                    "
-                  >
+                    ">
                     <i class="fa"></i>
                     <i></i>Add To Cart
                   </button>
                 </div>
                 <div class="col-3">
-                  <button
-                    type="button"
-                    class="btn-icon"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title=""
-                    data-original-title="Favorite"
-                    (click)="
+                  <button type="button" class="btn-icon" data-toggle="tooltip" data-placement="top" title=""
+                    data-original-title="Favorite" (click)="
                       deletefromFavourite(
                         v.emailid,
                         v.restaurantName,
@@ -66,8 +50,7 @@
                         v.description,
                         v.dishImage
                       )
-                    "
-                  >
+                    ">
                     <i class="fa fa-trash" style="color: red"></i>
                   </button>
                 </div>
