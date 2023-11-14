@@ -1,92 +1,56 @@
 <div class="container">
   <div class="shop-default shop-cards shop-tech">
     <div class="row">
-      <div *ngFor="let v of data" class="col-md-4">
-        <div
-          class="block product no-border z-depth-2-top z-depth-2--hover cardhover"
-        >
+      <div *ngFor="let v of data" class="col-md-4 ">
+        <div class="block product no-border z-depth-2-top z-depth-2--hover cardhover">
           <div class="block-image">
-            <img
-              class="img-center xxx"
-              src="{{ 'data:image/jpg;base64,' + v.dishImage }}"
-              style="width: 100%"
-            />
+
+            <img class="img-center xxx" src="{{'data:image/jpg;base64,' + v.dishImage}}" style="width:100% ;">
+
           </div>
           <div class="block-body text-center">
             <h3 class="heading heading-5 strong-600 text-capitalize">
-              {{ v.dishName }}
+
+              {{v.dishName}}
+
             </h3>
 
             <p class="product-description">
-              {{ v.description }}
+              {{v.description}}
             </p>
-            <!-- <div class="product-colors mt-2">
-                <div class="color-switch float-wrapper">
-                    <a href="#" class="bg-purple"></a>
-                    <a href="#" class="bg-pink"></a>
-                    <a href="#" class="bg-blue"></a>
-                </div>
-            </div> -->
             <div class="product-buttons mt-4">
               <div class="row align-items-center">
-                <div class="col-4" style="padding-top: 15px">
-                  <h1>₹ {{ v.price }}</h1>
+                <div class="col-4" style="padding-top: 15px;">
+                  <h1>₹ {{v.price}}</h1>
                 </div>
                 <div class="col-5">
                   <button
-                    (click)="
-                      addtoCart(
-                        v.emailid,
-                        v.restaurantName,
-                        v.dishName,
-                        v.quantity,
-                        v.price,
-                        v.description,
-                        v.dishImage
-                      )
-                    "
+                    (click)="addtoCart(v.emailid,v.restaurantName,v.dishName,v.quantity,v.price,v.description,v.dishImage)"
                     class="btn btn-block btn-primary btn-circle btn-icon-left"
-                    type="button"
-                  >
+                    type="button">
                     <i class="fa"></i>
                     <i></i>Add To Cart
                   </button>
                 </div>
                 <div class="col-3">
                   <button
-                    (click)="
-                      addtoFav(
-                        v.emailid,
-                        v.restaurantName,
-                        v.dishName,
-                        v.quantity,
-                        v.price,
-                        v.description,
-                        v.dishImage
-                      )
-                    "
-                    class="btn-icon"
-                    data-original-title="Favorite"
-                    data-placement="top"
-                    data-toggle="tooltip"
+                    (click)="addtoFav(v.emailid,v.restaurantName,v.dishName,v.quantity,v.price,v.description,v.dishImage)"
+                    class="btn-icon" data-original-title="Favorite" data-placement="top" data-toggle="tooltip"
                     title=""
-                    type="button"
-                  >
-                    <i
-                      class="fa fa-heart"
-                      mat-icon-button
-                      matTooltip="Add to Favorite"
-                      style="color: red"
-                    ></i>
+                    type="button">
+                    <i class="fa fa-heart" mat-icon-button matTooltip="Add to Favorite" style="color: red;"></i>
                   </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <br /><br />
+        <br><br>
       </div>
+
+
     </div>
-    <br /><br />
+    <br><br>
   </div>
 </div>
+

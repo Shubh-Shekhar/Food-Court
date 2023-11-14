@@ -1,15 +1,14 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     class="sidenav"
     fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
   >
     <mat-toolbar class="position-fixed">Menu</mat-toolbar>
     <mat-nav-list class="mar">
       <div class="sideNav-pad">
         <a
-          mat-list-item
           [routerLink]="[
             '/profile',
             {
@@ -18,26 +17,31 @@
               }
             }
           ]"
+          mat-list-item
         >
-          <mat-icon class="side-nav-icons">home</mat-icon>Home
+          <mat-icon class="side-nav-icons">home</mat-icon>
+          Home
         </a>
-        <a mat-list-item (click)="cart()">
-          <mat-icon class="side-nav-icons">add_shopping_cart</mat-icon> Cart
-          <span class="badge badge-warning mz" id="lblCartCount">
+        <a (click)="cart()" mat-list-item>
+          <mat-icon class="side-nav-icons">add_shopping_cart</mat-icon>
+          Cart
+          <span class="badge badge-warning mz" >
             {{ cartlength }}
           </span>
         </a>
-        <a mat-list-item (click)="favourite()">
-          <mat-icon class="side-nav-icons">favorite_border</mat-icon> Favorites
+        <a (click)="favourite()" mat-list-item>
+          <mat-icon class="side-nav-icons">favorite_border</mat-icon>
+          Favorites
           <span class="badge badge-warning mz" id="lblCartCount">
             {{ favlength }}
           </span>
         </a>
-        <a mat-list-item (click)="orderhistory()">
-          <mat-icon class="side-nav-icons">description</mat-icon> Order history
+        <a (click)="orderhistory()" mat-list-item>
+          <mat-icon class="side-nav-icons">description</mat-icon>
+          Order history
         </a>
 
-        <hr class="hr-class" />
+        <hr class="hr-class"/>
         <p class="list-para"></p>
       </div>
     </mat-nav-list>
@@ -48,16 +52,15 @@
       <div class="head-flex">
         <mat-toolbar color="primary">
           <button
-            type="button"
-            aria-label="Toggle sidenav"
-            mat-icon-button
             (click)="drawer.toggle()"
             *ngIf="isHandset$"
+            aria-label="Toggle sidenav"
+            mat-icon-button
+            type="button"
           >
             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
           </button>
           <span
-            class="active"
             [routerLink]="[
               '/profile',
               {
@@ -66,17 +69,18 @@
                 }
               }
             ]"
-            >Foodie App</span
+            class="active"
+          >Foodie App</span
           >
         </mat-toolbar>
 
-        <mat-toolbar style="justify-content: center" color="primary">
+        <mat-toolbar color="primary" style="justify-content: center">
           <mat-form-field style="width: 40%">
             <input
-              matInput
-              placeholder="Search"
               [(ngModel)]="searchInput"
               [ngModelOptions]="{ standalone: true }"
+              matInput
+              placeholder="Search"
             />
           </mat-form-field>
           <mat-form-field [formGroup]="searchForm">
@@ -84,37 +88,37 @@
             <mat-select formControlName="search">
               <mat-option *ngFor="let prf of option" [value]="prf">{{
                 prf
-              }}</mat-option>
+                }}</mat-option>
             </mat-select>
           </mat-form-field>
 
-          <button mat-icon-button (click)="search()">
+          <button (click)="search()" mat-icon-button>
             <mat-icon matTooltip="Search">search</mat-icon>
           </button>
         </mat-toolbar>
 
-        <mat-toolbar style="justify-content: right" color="primary">
+        <mat-toolbar color="primary" style="justify-content: right">
           <span
             style="
               margin-right: 10px;
               font-family: 'Times New Roman', Times, serif;
               padding-top: 5px;
             "
-            >Welcome {{ tempname }}</span
+          >Welcome {{ tempname }}</span
           >
           <button
-            mat-icon-button
             [matMenuTriggerFor]="menu"
             aria-label="Example icon-button with a menu"
+            mat-icon-button
           >
             <div class="logo-image">
-              <img [src]="path" class="img-fluid" />
+              <img [src]="path" class="img-fluid"/>
             </div>
           </button>
 
           <mat-menu #menu="matMenu">
             <!-- dropdwon -->
-            <button mat-menu-item (click)="signout()">
+            <button (click)="signout()" mat-menu-item>
               <mat-icon>login</mat-icon>
               <span>SignOut</span>
             </button>
@@ -134,24 +138,24 @@
         >
           © Email Id: dineshfoodcourt@gmail.com
           <i
+            aria-hidden="true"
             class="fa fa-facebook-square"
             style="font-size: 20px; margin-left: 5px"
-            aria-hidden="true"
           ></i>
           <i
+            aria-hidden="true"
             class="fa fa-twitter-square"
             style="font-size: 20px; margin-left: 5px"
-            aria-hidden="true"
           ></i>
           <i
+            aria-hidden="true"
             class="fa fa-youtube-square"
             style="font-size: 20px; margin-left: 5px"
-            aria-hidden="true"
           ></i>
           <i
+            aria-hidden="true"
             class="fa fa-github-square"
             style="font-size: 20px; margin-left: 5px"
-            aria-hidden="true"
           ></i>
         </div>
       </footer>

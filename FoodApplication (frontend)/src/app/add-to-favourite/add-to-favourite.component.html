@@ -1,83 +1,47 @@
 <div class="container">
   <div class="shop-default shop-cards shop-tech">
     <div class="row">
-      <div class="col-md-4" *ngFor="let v of data">
-        <div
-          class="block product no-border z-depth-2-top z-depth-2--hover cardhover"
-        >
+      <div *ngFor="let v of data" class="col-md-4">
+        <div class="block product no-border z-depth-2-top z-depth-2--hover cardhover">
           <div class="block-image">
-            <img
-              src="{{ 'data:image/jpg;base64,' + v.dishImage }}"
-              style="width: 100%"
-              class="img-center xxx"
-            />
+            <img class="img-center xxx" src="{{'data:image/jpg;base64,' + v.dishImage}}" style="width:100% ;">
           </div>
           <div class="block-body text-center">
-            <h2 class="heading heading-5 strong-600 text-capitalize">
-              {{ v.restaurantName }}
-            </h2>
+            <h2 class="heading heading-5 strong-600 text-capitalize"> {{v.restaurantName}} </h2>
             <h3 class="heading heading-5 strong-600 text-capitalize">
-              {{ v.dishName }}
+              {{v.dishName}}
             </h3>
             <p class="product-description">
-              {{ v.description }}
+              {{v.description}}
             </p>
 
             <div class="product-buttons mt-4">
               <div class="row align-items-center">
-                <div class="col-4" style="padding-top: 15px">
-                  <h1>₹ {{ v.price }}</h1>
+                <div class="col-4" style="padding-top: 15px;">
+                  <h1>₹ {{v.price}}</h1>
                 </div>
                 <div class="col-5">
-                  <button
-                    type="button"
-                    class="btn btn-block btn-primary btn-circle btn-icon-left"
-                    (click)="
-                      addtoCart(
-                        v.emailid,
-                        v.restaurantName,
-                        v.dishName,
-                        v.quantity,
-                        v.price,
-                        v.description,
-                        v.dishImage
-                      )
-                    "
-                  >
+                  <button (click)="addtoCart(34e,v.description,v.dishImage)" class="btn btn-block btn-primary btn-circle btn-icon-left"
+                          type="button">
                     <i class="fa"></i>
                     <i></i>Add To Cart
                   </button>
                 </div>
                 <div class="col-3">
-                  <button
-                    type="button"
-                    class="btn-icon"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title=""
-                    data-original-title="Favorite"
-                    (click)="
-                      deletefromFavourite(
-                        v.emailid,
-                        v.restaurantName,
-                        v.dishName,
-                        v.quantity,
-                        v.price,
-                        v.description,
-                        v.dishImage
-                      )
-                    "
-                  >
-                    <i class="fa fa-trash" style="color: red"></i>
+                  <button (click)="deletefromFavourite(v.emailid,v.restaurantName,v.dishName,v.quantity,v.price,v.description,v.dishImage)" class="btn-icon" data-original-title="Favorite" data-placement="top" data-toggle="tooltip"
+                          title=""
+                          type="button">
+                    <i class='fa fa-trash' style='color: red'></i>
                   </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <br /><br />
+        <br><br>
       </div>
     </div>
-    <br /><br />
+    <br><br>
   </div>
 </div>
+
