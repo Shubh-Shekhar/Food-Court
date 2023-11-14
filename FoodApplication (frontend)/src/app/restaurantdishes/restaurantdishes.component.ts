@@ -18,7 +18,7 @@ export class RestaurantdishesComponent implements OnInit {
 
   ngOnInit(): void {
     let reqHeader = new HttpHeaders().set('Authorization', 'Bearer ' + window.localStorage.getItem('token'));
-    this.http.get<any>("http://localhost:8050/admin/menu/getProducts/"+window.localStorage.getItem('restid'),{ 'headers': reqHeader })
+    this.http.get<any>("http://localhost:9000/admin/menu/getProducts/"+window.localStorage.getItem('restid'),{ 'headers': reqHeader })
     .subscribe(
       data => {
         console.log(data)
@@ -79,7 +79,7 @@ export class RestaurantdishesComponent implements OnInit {
       "dishImage":dishImage,
       "uemailid":window.localStorage.getItem("loginemail")
     }
-    this.http.post<any>("http://localhost:8050/addToCart/post",fav)
+    this.http.post<any>("http://localhost:9000/addToCart/post",fav)
     .subscribe(
       success=>{
         console.log(success);

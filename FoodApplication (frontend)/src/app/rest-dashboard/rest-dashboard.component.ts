@@ -1,10 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { LoginComponent } from '../login/login.component';
-import { RestaurantService } from '../Services/restaurant.service';
-import { RestaurantdishesComponent } from '../restaurantdishes/restaurantdishes.component';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {RestaurantService} from '../Services/restaurant.service';
 
 @Component({
   selector: 'app-rest-dashboard',
@@ -22,11 +20,8 @@ export class RestDashboardComponent implements OnInit {
   totalLength: any;
   page: number = 1;
 
-  constructor(
-    private resService: RestaurantService,
-    private http: HttpClient,
-    private router: Router
-  ) {}
+  constructor(private resService: RestaurantService, private http: HttpClient, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.resService.getRestaurant().subscribe((data) => {
@@ -35,15 +30,13 @@ export class RestDashboardComponent implements OnInit {
       this.totalLength = data.length;
     });
   }
+
   getDishes(emailid: any) {
     window.localStorage.setItem('restid', emailid);
-    this.router.navigate([
-      '/profile',
-      {
-        outlets: {
-          restdata: ['dishes'],
-        },
+    this.router.navigate(['/profile', {
+      outlets: {
+        restdata: ['dishes'],
       },
-    ]);
+    },]);
   }
 }

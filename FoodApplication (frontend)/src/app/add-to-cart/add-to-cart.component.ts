@@ -22,7 +22,7 @@ export class AddToCartComponent implements OnInit {
   constructor(private http:HttpClient,public datepipe: DatePipe,private comp:NavigationUserComponent) { }
   ngOnInit(): void {
     let reqHeader = new HttpHeaders().set('Authorization', 'Bearer ' + window.localStorage.getItem('token'));
-    this.http.get<any>("http://localhost:8050/addToCart/get/"+localStorage.getItem('loginemail') ,{ 'headers': reqHeader })
+    this.http.get<any>("http://localhost:9000/addToCart/get/"+localStorage.getItem('loginemail') ,{ 'headers': reqHeader })
     .subscribe(
       data => {
         console.log(data)
@@ -52,7 +52,7 @@ export class AddToCartComponent implements OnInit {
     }
 
     this.deleteCart(email,resturantName,dishName,price,discription,dishImage)
-    this.http.post<any>("http://localhost:8050/orderHistory/post",order).subscribe(
+    this.http.post<any>("http://localhost:9000/orderHistory/post",order).subscribe(
         success=>{
           iziToast.success({
             title: 'Success',
@@ -69,7 +69,7 @@ export class AddToCartComponent implements OnInit {
     }
     console.log(order)
     console.log(object)
-    this.http.post<any>("http://localhost:8050/sendMail",object)
+    this.http.post<any>("http://localhost:9000/sendMail",object)
     .subscribe(
       success=>{
         console.log(success);
@@ -80,7 +80,7 @@ export class AddToCartComponent implements OnInit {
 
    deleteCart(data:any,resturantName:any,dishName:any,price:any,discription:any,dishImage:any)
    {
-    return this.http.delete("http://localhost:8050/addToCart/delete/cart/"+window.localStorage.getItem('loginemail')+"/"+data+"/"+dishName).subscribe(
+    return this.http.delete("http://localhost:9000/addToCart/delete/cart/"+window.localStorage.getItem('loginemail')+"/"+data+"/"+dishName).subscribe(
       success=>{
 
 
